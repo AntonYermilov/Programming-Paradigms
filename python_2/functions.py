@@ -55,6 +55,7 @@ def multvalue_return():
     a, b = test(5, 4);
     print("\tUnpacking: ", a, b);
     print("\tFunction return value isn't strictly typed:\n\t", test(0, 0));
+
 def default_params_test():
     #def bar(a=1, b): pass; -- Error: non-default args must be before deflt ones
     def foo(a, b=True, c=1):
