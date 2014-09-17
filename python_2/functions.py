@@ -56,6 +56,7 @@ def multvalue_return():
     print("\tUnpacking: ", a, b);
     print("\tFunction return value isn't strictly typed:\n\t", test(0, 0));
 def default_params_test():
+    #def bar(a=1, b): pass; -- Error: non-default args must be before deflt ones
     def foo(a, b=True, c=1):
         if b:
             return a + c;
@@ -90,7 +91,7 @@ def default_params_test():
     print("\tFixed def_list 2nd call:", def_list_fixed(3));
 
 def varargs_test():
-    def foo(a, *args, c, prefix="\t"):
+    def foo( a, *args, c, prefix="\t"):
         print(prefix, "a =", a, end="; ");
         print("variadic args = ", end="");
         for arg in args[:-1]:
@@ -110,7 +111,7 @@ def varargs_test():
     foo("a", t, c="b");
     print("\tPass unpacked tuple as varargs:");
     foo("a", *t, c="b");
-    # foo(*t, c="b", a="a"); -- Error: a is specified
+    # foo(*t, c="b", a="a"); -- Error: a is specified twice
     print("\tFirst param bounding:");
     foo(*t, c="b");
     print("\tPass unpacked _string_ as varargs:");
@@ -118,13 +119,27 @@ def varargs_test():
     print("\tPass unpacked _list_ as varargs:");
     foo("a", *[1, 2, 3], c="b");
 
+def kwargs_test():
+    def foo(animal, status, prefix="\t"):
+        print(prefix, animal, "is", status);
 
+    print("Kwargs DEMO:");
+    print("\tPass named params as dictionary");
+    args = {"animal": "parrot", "status": "dead"};
+    foo(**args);
 
-# TODO: functions
-# TODO: modules
+    def bar(prefix="\t", **args):
+        print(prefix, "Given args: ", end="\n\t  ", sep="");
+        for key, value in args.items():
+            print("{}={}; ".format(key, value), end="");
+        print();
+
+    bar(msg="knock", paswd=42, baz=[5]); # NB: arg names are arbitrary
+
 
 if __name__ == "__main__":
     fun_with_tuples();
     multvalue_return();
     default_params_test();
     varargs_test();
+    kwargs_test();
