@@ -38,9 +38,9 @@
 * способ задания необязательных аргументов. Пример: print
 * передача параметров по имени. Positional параметры не могут идти после keyword параметров
 * default values аre evaluated only once! Пример со списком.
-	Решение: инициализация внутри функции. По умолчанию: None (Ничто).
-	 В conditionals -- always False.
-	Q: None == False? (A: False)
+	* Решение: инициализация внутри функции. По умолчанию: None (Ничто).
+	* В conditionals -- always False.
+	* Q: None == False? (A: False)
 
 ## Переменное число параметров (Variadic Args)
 * function(pos1, pos2, v1, .., vn, keywords only) <-- function call
