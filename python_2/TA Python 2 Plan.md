@@ -128,4 +128,5 @@
 	md5.update("val".encode("utf-8"))  # update concatenates with previous
 	md5.digest()
 	```
+
 ## Решение с использованием хешей
