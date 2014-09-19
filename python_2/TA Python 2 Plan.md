@@ -123,13 +123,10 @@
 * hash() / MD5
 #### MD5 example
 * moronic, but good hash function design is not what we want from this lab
-
+```python
 import hashlib
-
 md5 = hashlib.md5()
-
 md5.update("val".encode("utf-8"))  <-- update concatenates with previous
-
 md5.digest()
-
+```
 ## Решение с использованием хешей
