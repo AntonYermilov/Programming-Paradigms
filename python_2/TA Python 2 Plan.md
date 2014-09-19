@@ -18,6 +18,7 @@
 * Писать тесты для функций в  "main"
 * Самостоятельное изучение
 * Python is good for rapid prototyping/test data generation
+
 #### Python Idioms Sources
 * http://python.net/~goodger/projects/pycon/2007/idiomatic/handout.html
 * http://safehammad.com/downloads/python-idioms-2014-01-16.pdf
@@ -80,13 +81,14 @@
 ## Создать свой
 * initialization statements (runs only the first time module name used in import statement)
 * definitions
+
 ##### oписание "\_\_name__"
 * Модули -- "объекты".  Атрибут "\_\_name\_\_"
- 
+
 	при импорте -- имя модуля;
 	 
 	при запуске -- специальное значение "\_\_main\_\_"
- * Переменные из командной строки: sys.argv
+* Переменные из командной строки: sys.argv
 #### Module name search
 * lookup in build-ins
 * sys.path --> <module_name>.py
@@ -99,8 +101,10 @@
 # Обзор модуля os
 * portable interface to OS API (POSIX-like).
 * os.name -- os family; sys.platform -- higher granularity
+
 ### Перечисление содержимого директории
 * os.listdir(<dirname>) --> list of file/dir names
+
 ### Утилиты для работы с путями: os.path
 * https://docs.python.org/3/library/os.path.html
 * isdir/isfile/is... -- checks weather path is file/dir/...
