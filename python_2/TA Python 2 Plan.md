@@ -84,10 +84,8 @@
 
 ##### oписание "\_\_name__"
 * Модули -- "объекты".  Атрибут "\_\_name\_\_"
-
-	при импорте -- имя модуля;
-	 
-	при запуске -- специальное значение "\_\_main\_\_"
+	* при импорте -- имя модуля;
+	* при запуске -- специальное значение "\_\_main\_\_"
 * Переменные из командной строки: sys.argv
 #### Module name search
 * lookup in build-ins
@@ -125,9 +123,13 @@
 * hash() / MD5
 #### MD5 example
 * moronic, but good hash function design is not what we want from this lab
+
 import hashlib
+
 md5 = hashlib.md5()
+
 md5.update("val".encode("utf-8"))  <-- update concatenates with previous
+
 md5.digest()
 
 ## Решение с использованием хешей
