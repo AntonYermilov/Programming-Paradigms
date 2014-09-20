@@ -83,7 +83,7 @@ def default_params_test():
     print("\t\"Broken\" def_list 2nd call:", def_list_broken(3), " ?!");
 
     def def_list_fixed(el, lst=None, prefix="\t"):
-        if not lst:
+        if lst == None:
             lst = [];
         lst.append(3);
         return lst;
