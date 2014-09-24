@@ -126,4 +126,3 @@ if __name__ == "__main__":
     res = [print(el, end="") for el in rev_list]; # welcome list comprehension
     print();
     print(res); # print return "nothing" --> None
-
