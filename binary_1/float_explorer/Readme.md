@@ -1,7 +1,11 @@
 To make "executable" run the following:
 
+```
 float_explorer> make
+```
 
-To run "executabel":
+To run "executable":
 
+```
 float_explorer> ./fexpl
+```
