@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <assert.h>
 #include <string.h>
+#include <stdint.h>
 
 #define FLOAT_BITS (32)
 #define FLOAT_BYTES (FLOAT_BITS >> 3)

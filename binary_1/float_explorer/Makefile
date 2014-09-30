@@ -1,7 +1,7 @@
 OUT=fexpl
 
 build: fexpl.c
-	gcc -Werror fexpl.c -o $(OUT)
+	gcc -Werror -std=c99 fexpl.c -o $(OUT)
 
 clean:
 	rm $(OUT)
