@@ -49,8 +49,8 @@ int main(int argc, char **argv) {
 
   if (strcmp(argv[1], "bin") == 0) {
       float value_to_explore = strtof(argv[2], NULL);
-      fprintf(stdout, "Format: "SIGN_BG"Sign"RESET_BG", "EXP_BG"Exponet"RESET_BG
-             ", "MANT_BG"Mantissa"RESET_BG".\n");
+      fprintf(stdout, "Format: "SIGN_BG"Sign"RESET_BG", "EXP_BG"Exponent"
+              RESET_BG", "MANT_BG"Mantissa"RESET_BG".\n");
       fprintf(stdout, "Binary of %."FRAC_DIGITS_NUM"f:\n", value_to_explore);
       print_float_in_bin(value_to_explore);
     } else if (strcmp(argv[1], "add") == 0) {
