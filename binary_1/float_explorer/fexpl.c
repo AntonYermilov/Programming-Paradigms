@@ -23,39 +23,44 @@ void print_float_in_bin(float printee);
 int main(int argc, char **argv) {
   if (argc < 3) {
     fprintf(stderr, "Usage: fexpl cmd arg1 [arg2]\n");
-    fprintf(stderr, "Params:\n\tcmd = {bin, add, mul}\n");
+    fprintf(stderr, "Params:\n\tcmd = {bin, add, sub, mul, div}\n");
     exit(-1);
   }
   assert(sizeof(float) == FLOAT_BYTES);
 
 #define GENERATE_BIN_OP_SUPPORT(op)				\
-  do {						        	\
-    if (argc < 4) {				          	\
+  do {								\
+    if (argc < 4) {						\
       fprintf(stderr, "Command "#op" expects to args\n");	\
-      exit(-1);							\
+      exit(-1);						\
     }								\
-    float arg1 = strtof(argv[2], NULL);				\
-    fprintf(stdout, "Arg1 is %f\n", arg1);			\
+    float arg1 = strtof(argv[2], NULL);			\
+    fprintf(stdout, "Arg1 is %."FRAC_DIGITS_NUM"f\n", arg1);	\
     print_float_in_bin(arg1);					\
 								\
-    float arg2 = strtof(argv[3], NULL);				\
-    fprintf(stdout, "Arg2 is %f\n", arg2);			\
+    float arg2 = strtof(argv[3], NULL);			\
+    fprintf(stdout, "Arg2 is %."FRAC_DIGITS_NUM"f\n", arg2);	\
     print_float_in_bin(arg2);					\
     								\
-    fprintf(stdout, #op" result is %f\n", arg1 op arg2);	\
+    fprintf(stdout, #op" result is %."FRAC_DIGITS_NUM"f\n",	\
+            arg1 op arg2);					\
     print_float_in_bin(arg1 op arg2);				\
   } while (0)
 
   if (strcmp(argv[1], "bin") == 0) {
       float value_to_explore = strtof(argv[2], NULL);
       fprintf(stdout, "Format: "SIGN_BG"Sign"RESET_BG", "EXP_BG"Exponet"RESET_BG
-	      ", "MANT_BG"Mantissa"RESET_BG".\n");
+             ", "MANT_BG"Mantissa"RESET_BG".\n");
       fprintf(stdout, "Binary of %."FRAC_DIGITS_NUM"f:\n", value_to_explore);
       print_float_in_bin(value_to_explore);
     } else if (strcmp(argv[1], "add") == 0) {
       GENERATE_BIN_OP_SUPPORT(+);
     } else if (strcmp(argv[1], "mul") == 0) {
       GENERATE_BIN_OP_SUPPORT(*);
+    } else if (strcmp(argv[1], "sub") == 0) {
+      GENERATE_BIN_OP_SUPPORT(-);
+    } else if (strcmp(argv[1], "div") == 0) {
+      GENERATE_BIN_OP_SUPPORT(/);
     } else {
       fprintf(stderr, "Unknown command: %s\n", argv[1]);
       exit(-1);
