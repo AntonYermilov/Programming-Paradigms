@@ -113,7 +113,6 @@ class Battle:
         winner.victory_cry();
 
 if __name__ == "__main__":
-
     Battle._Battle__print_sw_intro(); # name mangling for methods
 
     boss = BadBoss("Shredder", 50, 11);
@@ -126,4 +125,4 @@ if __name__ == "__main__":
 # NB:
 #    call "say" for TurtlesBand (polymorphism)
 #    call "damage" for TurtlesBand (error)
-#    renaming _get_a_hit to __get_a_hit effect? (name mangling)
+#    renaming effect: _get_a_hit to __get_a_hit (name mangling)
