@@ -1,8 +1,8 @@
+#!/usr/bin/env python3
+
 # author: Artur Huletsky (hatless.fox@gmail.com)
 #
 # NB: UI stands for unknown info. You must read about it yourself
-
-#!/usr/bin/env python3
 
 import random;
 
