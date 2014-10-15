@@ -66,7 +66,7 @@ class TurtlesBand(Hero):
     def battle_cry(self):
         [t.battle_cry() for t in self.__turtles]
 
-    def __get_a_hit(self, damage):
+    def _get_a_hit(self, damage):
         turtles_nm = len(self.__turtles);
         if turtles_nm == 0:
             return;
@@ -75,7 +75,7 @@ class TurtlesBand(Hero):
             super().say("Miss, Ha-ha");
             return;
         victim = self.__turtles[victim_i];
-        victim.__get_a_hit(damage);
+        victim._get_a_hit(damage);
         if victim.is_dead():
             victim.say("I'm dead... Sorry dudes");
             del self.__turtles[victim_i];
