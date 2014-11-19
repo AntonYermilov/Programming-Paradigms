@@ -21,9 +21,9 @@ def playWithPlainExceptions():
     try:
         print(1 / d["test"])
     except: # catch all exceptions
-        print("Some error has been occured")
+        print("An error has occured")
 
-def playWithExtraConstructs():
+def playWithExtrConstructs(a):
     print("=== Extra Exceptions ===");
     l = [1];
     try:
