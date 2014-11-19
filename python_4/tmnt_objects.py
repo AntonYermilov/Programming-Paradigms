@@ -121,7 +121,6 @@ if __name__ == "__main__":
     arena = Battle(turtles, boss)
     arena.battle()
 
-
 # NB:
 #    call "say" for TurtlesBand (polymorphism)
 #    call "damage" for TurtlesBand (error)
