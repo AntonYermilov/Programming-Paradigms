@@ -58,9 +58,10 @@ int AtomicInt_wait(AtomicInt* atomic_int, int limit) {
 
   pthread_mutex_lock(&atomic_int->value_mutex);
   atomic_int->limit = limit;
-  pthread_cond_wait(&atomic_int->value_cv, &atomic_int->value_mutex);
+  while (atomic_int->value < atomic_int->limit) {
+    pthread_cond_wait(&atomic_int->value_cv, &atomic_int->value_mutex);
+  }
   result = atomic_int->value;
-  assert(result >= atomic_int->limit);
   pthread_mutex_unlock(&atomic_int->value_mutex);
 
   return result;
