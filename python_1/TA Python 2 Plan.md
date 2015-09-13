@@ -79,10 +79,10 @@
 * initialization statements (runs only the first time module name used in import statement)
 * definitions
 
-##### oписание "\_\_name__"
-* Модули -- "объекты".  Атрибут "\_\_name\_\_"
+##### oписание "__name__"
+* Модули -- "объекты".  Атрибут "__name__"
 	* при импорте -- имя модуля;
-	* при запуске -- специальное значение "\_\_main\_\_"
+	* при запуске -- специальное значение "__main__"
 * Переменные из командной строки: sys.argv
 #### Module name search
 * lookup in build-ins
