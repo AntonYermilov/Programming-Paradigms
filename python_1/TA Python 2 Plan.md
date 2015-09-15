@@ -46,6 +46,8 @@
 * Kwargs -- same but dictionary is used. (**kwargs vs *vagrs)
 * Order: pos, vargs, kwargs
 
+# Описание лабы по дeдупликации
+
 # Модули
 
 ## Common
@@ -107,7 +109,7 @@
 * getsize -- size of stuff referenced by path (NOTE: dir size is not sum of file sizes)
 * walk -- simple way to traverse child path elements
 
-# Описание лабы по дeдупликации
+
 
 ## FS Doc
 * https://docs.python.org/3/library/filesys.html
