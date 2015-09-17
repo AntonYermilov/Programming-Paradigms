@@ -23,5 +23,5 @@ print(hasher.hexdigest())
 # with open(filename, mode='rb') as f:
 #     hasher = cryptohasher()
 #     hasher.update(f.read(1024))
-# return hasher.digest() # digest of first min(1024, filesize) bytes of
+#     return hasher.digest() # digest of first min(1024, filesize) bytes of
 # file
