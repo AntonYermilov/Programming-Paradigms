@@ -10,8 +10,11 @@ try:
 except:
     print("Python: What the hell you try to import? I don't know \"my_math\"!")
 
+# import custom.my_math # this works
+
 print("Module path patching...")
 # alter pathes to be able to load custom module
+import math
 custom_module_path = os.path.join(os.getcwd(), "custom")
 module_pathes.insert(0, custom_module_path)
 

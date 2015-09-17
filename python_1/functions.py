@@ -1,5 +1,6 @@
 def fun_with_tuples():
     a, b = 1, 2
+    c = 1,2
     a, b = b, a = a, b
     # a = 2, b = 1. Look for explanation in repo
     print("\tDouble swap: ", a, b)
@@ -9,16 +10,15 @@ def fun_with_tuples():
     print("\tTuples are immutable, but elements are mutable: ", t)
     # t[0] += "a" -- Error: You tell we why
     # Hint: t[1] += [42] -- Error
-
     a, b, *c = 1, 2, 3, 4, 5
     print("\t\"Unpack\" (non-empty tail): ", a, b, c)
     a, b, *c = 1, 2
     print("\t\"Unpack\" (empty tail case): ", a, b, c)
     # a, b, *c, *d = 1, 2, 3 -- Error
-
     a, b, c = [1, 2, 3]
     print("\tList \"unpacking\": ", a, b, c)
     # a, b = [1,2,3] -- Error
+    *a, c = 1,2,3,4,5 # also works
     _, b, _ = 1, 2, 'lol'
 
 
@@ -56,7 +56,7 @@ def default_params_test():
 
     def append_broken(el, lst=[]):
         ''' This implementation is broken '''
-        lst.append(3)
+        lst.append(el)
         return lst
 
     print("\t\"Broken\" append 1st call:", append_broken(3))
@@ -110,7 +110,6 @@ def kwargs_test():
     print("\tPass named params as dictionary")
     args = {"animal": "parrot", "status": "dead"}
     foo(**args)
-
     def bar(prefix="\t", **kwargs):
         print(prefix, "Given args: ", end="\n\t  ", sep="")
         for key, value in kwargs.items():
@@ -127,7 +126,7 @@ def full_function_syntax(*args, **kwargs) -> int:
     print(*args)
     print(kwargs)
     d = {'end': '...\n'}
-    print(**d)
+    print(**d) # print(end='...\n')
     return 0
 
 def python_with_statement(filename):

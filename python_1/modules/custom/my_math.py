@@ -1,6 +1,5 @@
 from operator import eq as plain_equality
 
-
 def sqrt(x):
     print("Custom sqrt")
     return 42

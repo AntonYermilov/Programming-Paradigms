@@ -3,7 +3,7 @@
 import math; # import entire modure
 from os import walk; # import singe "name" (function/submodule)
 from os import path;
-from hashlib import md5 as cryptohasher; # import name with synonym
+from hashlib import sha1 as cryptohasher; # import name with synonym
 
 print("Sqrt: ", math.sqrt(9));
 print("Traversal:");
