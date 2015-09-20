@@ -41,6 +41,7 @@ def re_examples():
    | 0x[0-9a-fA-F]+  # Hexadecimal form
 """, re.VERBOSE)
     print(charref.findall("123 012347 0xdeadbeef hello"))
+    print(re.search('Vladimir (?!Putin)', 'Vladimir Pozner').group())
     # Real world example IPv4
     # ^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}
     # (?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$
