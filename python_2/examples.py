@@ -51,7 +51,7 @@ def collections_examples():
     # namedtuple
     rgb = collections.namedtuple('Colour', ['red', 'green', 'blue'])
     blue = rgb(0, 0, 255)
-    red = rgb(red=0, green=255, blue=0)
+    red = rgb(red=255, green=0, blue=0)
     red_component, _, _ = blue
     print(blue, red.red, red_component)
 
