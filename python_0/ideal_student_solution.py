@@ -55,13 +55,10 @@ def word_frequences(filename):
     return result
 
 
-def second(item):
-    return item[1]
-
 def print_sorted(filename, amount=None):
     by_freq = bool(amount)
     for word, count in sorted(word_frequences(filename).items(),
-                              key=second,
+                              key=itemgetter(by_freq),
                               reverse=by_freq)[:amount]:
         print(word, count)
 
