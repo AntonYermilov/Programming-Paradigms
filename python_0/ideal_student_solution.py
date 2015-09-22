@@ -1,5 +1,5 @@
 from operator import itemgetter
-from collections import defaultdict, Co
+from collections import defaultdict
 
 # 1
 
