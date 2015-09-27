@@ -69,7 +69,7 @@ def collections_examples():
         d = collections.deque(sequence[:n])
         d.appendleft(0)
         s = sum(d)
-        for elem in sequence[:-n+1]:
+        for elem in sequence[n:]:
             s += elem - d.popleft()
             d.append(elem)
             print(s / n)
