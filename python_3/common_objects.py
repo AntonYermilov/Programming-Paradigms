@@ -106,7 +106,7 @@ class MinimumBalanceAccount(BankAccount):
 
 
 def generate_id(n=16):
-    alphabet = string.ascii_uppercase + string.digits
+    alphabet = string.ascii_letters + string.digits
     return ''.join(random.choice(alphabet) for _ in range(n))
 
 
@@ -145,7 +145,7 @@ if __name__ == '__main__':
     c = BankAccount()
     a.deposit(10)
     # BankAccount.deposit(a, 10) # the same
-    print('b balance:', b._balance)  # UNACCEPTABLE!
+    print('UNACCEPTABLE! b balance:', b._balance)
     # print(b.__id) # error, name mangling
     a.get_id = lambda self: self.__id
     # print(a.get_id())  # TypeError
@@ -153,7 +153,7 @@ if __name__ == '__main__':
 
     ################################################
     # UNACCEPTABLE!
-    # print("b id:", b._BankAccount__id)  # name unmangling
+    print("UNACCEPTABLE! b id:", b._BankAccount__id)  # name unmangling
 
     # static
     BankAccount.MAX_BALANCE = 2 ** 32
