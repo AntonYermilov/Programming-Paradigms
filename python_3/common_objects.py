@@ -117,7 +117,7 @@ class WithdrawError(Exception):
         self.amount = amount
 
 
-class BankAccount:
+class AdvancedBankAccount:
     MAX_BALANCE = 2 ** 64
 
     def __init__(self):
@@ -137,14 +137,14 @@ class BankAccount:
         return self._balance
 
     def get_max_balance():
-        return BankAccount.MAX_BALANCE
+        return AdvancedBankAccount.MAX_BALANCE
 
 if __name__ == '__main__':
-    a = BankAccount()
+    a = AdvancedBankAccount()
     b = a
-    c = BankAccount()
+    c = AdvancedBankAccount()
     a.deposit(10)
-    # BankAccount.deposit(a, 10) # the same
+    # AdvancedBankAccount.deposit(a, 10) # the same
     print('UNACCEPTABLE! b balance:', b._balance)
     # print(b.__id) # error, name mangling
     a.get_id = lambda self: self.__id
@@ -156,8 +156,8 @@ if __name__ == '__main__':
     print("UNACCEPTABLE! b id:", b._BankAccount__id)  # name unmangling
 
     # static
-    BankAccount.MAX_BALANCE = 2 ** 32
-    print('max balance:', BankAccount.get_max_balance())
+    AdvancedBankAccount.MAX_BALANCE = 2 ** 32
+    print('max balance:', AdvancedBankAccount.get_max_balance())
     a.MAX_BALANCE = 2 ** 64
     print('a max: {}, c max: {}'.format(a.MAX_BALANCE,
                                         c.MAX_BALANCE))
