@@ -1,4 +1,8 @@
-class Singleton:
+class Runtime:
+    pass
+
+
+class Singleton(Runtime):
     _instance = None
 
     def __new__(cls, *args, **kwargs):
@@ -16,6 +20,12 @@ class StringBuilder:
         self.buf += bytes(s.encode(self.encoding))
         return self
 
+    def whitespace(self):
+        return self.add(' ')
+
+    def newline(self):
+        return self.add('\n')
+
     def build(self):
         return self.buf.decode(self.encoding)
 
@@ -32,8 +42,9 @@ if __name__ == '__main__':
     # https://waymoot.org/home/python_string/
     sb = StringBuilder()
     result = (sb.add('hello,')
-                .add(' ')
+                .whitespace()
                 .add('world')
-                .add('!\n')
+                .add('!')
+                .newline()
                 .build())
     print(result)
