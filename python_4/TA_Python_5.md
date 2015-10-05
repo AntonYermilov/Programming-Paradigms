@@ -24,6 +24,4 @@ https://docs.python.org/3/library/operator.html
 * Literature: Gang of Four, Head First Design Patterns
 
 ## ДЗ
-https://docs.google.com/document/d/1VvrQTZ_xEvwAOHSsPWf40Ra3iQTQAGMMNyu5mWeQhhc/edit?pli=1
-
-https://docs.google.com/document/d/1VDAlruzSJygHbxlfjFzEB3SaUodHDxBEqebLk4FAGYo/edit?pli=1
+hooray!
