@@ -11,5 +11,8 @@ solution.py
 # hide next lessons
 python_5/
 haskell_1/
-pthreads_1/
 
+# gtags
+GTAGS
+GRTAGS
+GPATH
