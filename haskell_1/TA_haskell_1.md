@@ -5,6 +5,7 @@
 * Нет побочных эффектов (чистота)
 * Преимущества
 * Основано на lambda исчислении (all you need is lambda)
+
 ## Haskell
 * Назван в честь логика Хаскелла Карри
 * Мы будем использовать Glasgow (Glorious) Haskell Compiler
