@@ -1,11 +1,7 @@
 #!/usr/bin/env python3
-# coding: utf-8
 #
-# первая строка позволяет запускать этот скрипт как ./intro.py, 
-#   а не только через python3 intro.py, подробности: гуглите shebang 
-# вторая строка задаёт кодировку в этом файле, для python3 по умолчанию
-# utf-8, поэтому можно не указывать
-
+# первая строка позволяет запускать этот скрипт как ./intro.py,
+#   а не только через python3 intro.py, подробности: гуглите shebang
 
 ### Intro:
 # Python - multiparadigm language, dynamic typing
@@ -16,12 +12,7 @@
 # Запуск: python3 <script_name>
 # Интерактивная консоль: python3
 
-# Рекомендумая среда разработки --- sublime_text_3
-# View -> Indentation -> Tab width: 4
-# View -> Intentation -> Indent using spaces 
-# Запуск скрипта --- Ctrl-B
-
-contact = {"name": "Андроник", "email": "andronik.ordian@gmail.com"}
+contact = {"name": "Андроник Валерьевич", "email": "andronik.ordian@gmail.com"}
 
 email_format = "spbau/paradigms: {surname} {task_number}"
 # Формат темы письма
@@ -31,6 +22,12 @@ print(email_format.format(surname="Pupkin", task_number=0))
 # Будет оцениваться корректность программы И качество кода
 # Придерживайтесь одного стиля
 
+## Primitive types
+# Int, buit-in BigInt, 2 ** 6400
+# float, 1e-10, 3.1415926
+# complex (real + img i), complex(0, 1) ** 2
+# strings -- immutable
+# bool -- True, False
 
 ### Variables, assignments
 # #comment
@@ -75,18 +72,10 @@ def guess_number(secret=42):
 # input(prompt)
 # Help: help(<function_name>)
 
-## Primitive types
-# Dynamic typing
-# Int, buit-in BigInt, 2 ** 6400
-# float, 1e-10, 3.1415926
-# complex (real + img i), complex(0, 1) ** 2
-# strings -- immutable
-# bool -- True, False
-
 ## Lists (c++ array or vector)
 # Heterogeneous
 empty_list = [] # or list()
-xs = [1, 2, "3", 4.0] 
+xs = [1, 2, "3", 4.0]
 len(xs) # длина списка
 # xs[i] -- получить i-ый элемент списка
 # xs[i] = 2  # заменить i-ый элемент списка на 2
@@ -100,7 +89,7 @@ len(xs) # длина списка
 # xs[1:10] - от 1 до 10
 # xs[1:10:2] - от 1 до 10 с шагом 2
 # xs[::-1] - в обратном порядке
-# xs[ind1:in"d2] = lst2  - заменить подсписок на другой список
+# xs[ind1:ind2] = lst2  - заменить подсписок на другой список
 # xs.append(el), xs.remove(el), val in xs,
 # xs.index(el), xs.count(el), xs.extend(list)
 # список можно умножить на число
@@ -119,7 +108,7 @@ len(xs) # длина списка
 # sorted(xs) ## новый список
 # dir([]) - получить все методы (функции) над списками
 
-# range([start,] stop[, step]) 
+# range([start,] stop[, step])
 # синтаксис такой же как и у срезов
 # for i in range(10):
 #     print(i)
@@ -161,7 +150,7 @@ len(xs) # длина списка
 # Строки можно умножать
 # 'a' * 4 == 'aaaa'
 # По строке можно итерироваться
-# for char in 'hello': 
+# for char in 'hello':
 #     pass
 
 ### Tuples
@@ -210,14 +199,4 @@ len(xs) # длина списка
 # set comprehensions
 # {i for i in range(1, 10, 2)}
 
-### Files
-# fd = open("intro.py", mode='r')
-# Итерируемся по строкам файла
-# for line in fd:
-#   print(line)
-# fd.close() # закрываем файл
-
-# data = fd.read() # прочитать весь файл в строку
-
-# HW
-# https://www.dropbox.com/sh/l7zh2fquflldw9y/AAArxvYNcScTLqPJ5IL355EZa?dl=0
+# let's write hanoi!
