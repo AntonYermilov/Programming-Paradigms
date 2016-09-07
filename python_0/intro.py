@@ -208,3 +208,10 @@ def hanoi(n, src, dst):
     hanoi(n-1, src, other)
     print("{} -> {}".format(src, dst))
     hanoi(n-1, other, dst)
+
+
+# files
+# f = open("filename.txt")
+# for line in f:
+#     print(line)
+# f.close()
