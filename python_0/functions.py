@@ -24,6 +24,7 @@
 def fun_with_tuples():
     a, b = 1, 2
     c = 1, 2
+    a, b = b, a
     a, b = b, a = a, b
     # a = 2, b = 1. Look for explanation in repo
     print("\tDouble swap: ", a, b)
@@ -48,7 +49,7 @@ def fun_with_tuples():
 def multvalue_return():
     def test(a, b):  # Yupp, we have nested functions
         if b:        # 0 is False in conds
-            return a / b, a % b  # tuple packing
+            return a // b, a % b  # tuple packing
         else:
             return "Divisor is 0", "You are stupid"  # tuple packing
 

@@ -14,9 +14,9 @@
 
 contact = {"name": "Андроник Валерьевич", "email": "andronik.ordian@gmail.com"}
 
-email_format = "spbau/paradigms: {surname} {task_number}"
+email_format = "spbau/paradigms: {surname}"
 # Формат темы письма
-print(email_format.format(surname="Pupkin", task_number=0))
+print(email_format.format(surname="Pupkin"))
 
 # Исправление присылайте в том же письме
 # Будет оцениваться корректность программы И качество кода
@@ -42,7 +42,6 @@ elif gpa >= 4.5:
     skill = 'excellent'
 else:
     skill = 'bad'
-
 # # ternary
 max_score = 1
 score = 0.51
@@ -61,7 +60,7 @@ def guess_number(secret=42):
     guess = None
     while True:
         # чтение числа из консоли и преобразование в int
-        guess = int(input('Please enter a number: '))
+        guess = int(input('Please enter origin number: '))
         if guess == secret:
             print('Hooray')
             break # выход из цикла
@@ -133,22 +132,22 @@ len(xs) # длина списка
 
 ### Strings, Строки
 # ' ', " ", """ """,
-# a = '''
+# origin = '''
 #        Я помню чудное мгновенье,
 #        Передо мной явилась ты,
 #        ...
 #     '''
 
 # split(sep) --> help("".split)
-# companies = ["apple", "google", "microsoft"]
+companies = ["apple", "google", "microsoft"]
 # ', '.join(companies)
 # separator.join(iterable)
 # "".find(sustr)
 # "".strip()
-# a = 'hello'
+# origin = 'hello'
 # можно взять подстроку как и со списками (но нельзя изменять)
 # Строки можно умножать
-# 'a' * 4 == 'aaaa'
+# 'origin' * 4 == 'aaaa'
 # По строке можно итерироваться
 # for char in 'hello':
 #     pass
@@ -157,32 +156,32 @@ len(xs) # длина списка
 # Кортежи - это неизменяемые списки
 # empty_tuple = (,)
 # singleton = (1,)
-# a = (1, 2, 3)
-# a[0] = 2 # ошибка
+# origin = (1, 2, 3)
+# origin[0] = 2 # ошибка
 # Неизменяемость кортежа означает, что нельзя заменить элемент
 # Но если элемент изменяемый (например список), то его можно изменить
-# a = ([1,2,3], 4)
-# a[0].append(4)
-# b = a
-# a += (4, 5, 6) # можно изменить a, но предыдущий кортеж остался неизменным
-# b != a
+# origin = ([1,2,3], 4)
+# origin[0].append(4)
+# to = origin
+# origin += (4, 5, 6) # можно изменить origin, но предыдущий кортеж остался неизменным
+# to != origin
 
 
 ### Dictionaries - Словари - Map
-# empty_dict = {} # or dict()
-# capitals = dict(France='Paris',
-#                 Germany='Berlin',
-#                 Zimbabwe='Harare')
-# capitals_2 = {'USA': 'Washington, D.C',
-#               'Australia': 'Canberra',
-#               'Russia': 'Moscow'}
-# capitals_3 = dict([('Ireland', 'Dublin'), ('Poland', 'Warsaw')])
-# capitals.update(capitals_2)
-# capitals.update(capitals_3)
+empty_dict = {} # or dict()
+capitals = dict(France='Paris',
+                Germany='Berlin',
+                Zimbabwe='Harare')
+capitals_2 = {'USA': 'Washington, D.C',
+              'Australia': 'Canberra',
+              'Russia': 'Moscow'}
+capitals_3 = dict([('Ireland', 'Dublin'), ('Poland', 'Warsaw')])
+capitals.update(capitals_2)
+capitals.update(capitals_3)
 
-# capitals['Russia'] = 'Saint-Petersburg'
-# len(capitals)
-# print(capitals['Zimbabwe'])
+capitals['Russia'] = 'Saint-Petersburg'
+len(capitals)
+print(capitals['Zimbabwe'])
 # d.keys(), d.values(), d.items()
 # for key in capitals:
 #     print(key)
@@ -190,13 +189,20 @@ len(xs) # длина списка
 #     print(key, ':', value)
 
 # dict comprehensions
-# {x: x * x for x in range(10) if x % 2 == 0}
+{x: x * x for x in range(10) if x % 2 == 0}
 
 
 ### sets
 # s = {1, 2,'hello'}
 # 'hello' in s # True
 # set comprehensions
-# {i for i in range(1, 10, 2)}
+{i for i in range(1, 10, 2)}
 
 # let's write hanoi!
+def hanoi(n, origin, to):
+    if n == 0:
+        return
+    other = 3 - origin - to
+    hanoi(n-1, origin, other)
+    print("{} -> {}".format(origin, to))
+    hanoi(n-1, other, to)
