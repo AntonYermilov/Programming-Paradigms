@@ -9,7 +9,15 @@ __pycache__/
 solution.py
 
 # hide next lessons
-python_5/
+python_1/
+python_2/
+python_3/
+python_4/
+sql_1/
+haskell_1/
+haskell_2/
+pthreads_1/
+binary_1/
 
 # gtags
 GTAGS
