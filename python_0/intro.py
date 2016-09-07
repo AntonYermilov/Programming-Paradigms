@@ -60,7 +60,7 @@ def guess_number(secret=42):
     guess = None
     while True:
         # чтение числа из консоли и преобразование в int
-        guess = int(input('Please enter origin number: '))
+        guess = int(input('Please enter a number: '))
         if guess == secret:
             print('Hooray')
             break # выход из цикла
@@ -134,7 +134,7 @@ a.sort(key=lambda x: x[1]) # то же через лямбду
 
 ### Strings, Строки
 # ' ', " ", """ """,
-# origin = '''
+# a = '''
 #        Я помню чудное мгновенье,
 #        Передо мной явилась ты,
 #        ...
@@ -146,10 +146,10 @@ companies = ["apple", "google", "microsoft"]
 # separator.join(iterable)
 # "".find(sustr)
 # "".strip()
-# origin = 'hello'
+# a = 'hello'
 # можно взять подстроку как и со списками (но нельзя изменять)
 # Строки можно умножать
-# 'origin' * 4 == 'aaaa'
+# 'a' * 4 == 'aaaa'
 # По строке можно итерироваться
 # for char in 'hello':
 #     pass
@@ -158,15 +158,15 @@ companies = ["apple", "google", "microsoft"]
 # Кортежи - это неизменяемые списки
 # empty_tuple = (,)
 # singleton = (1,)
-# origin = (1, 2, 3)
-# origin[0] = 2 # ошибка
+# a = (1, 2, 3)
+# a[0] = 2 # ошибка
 # Неизменяемость кортежа означает, что нельзя заменить элемент
 # Но если элемент изменяемый (например список), то его можно изменить
-# origin = ([1,2,3], 4)
-# origin[0].append(4)
-# to = origin
-# origin += (4, 5, 6) # можно изменить origin, но предыдущий кортеж остался неизменным
-# to != origin
+# a = ([1,2,3], 4)
+# a[0].append(4)
+# b = a
+# a += (4, 5, 6) # можно изменить src, но предыдущий кортеж остался неизменным
+# b != a
 
 
 ### Dictionaries - Словари - Map
@@ -201,10 +201,10 @@ print(capitals['Zimbabwe'])
 {i for i in range(1, 10, 2)}
 
 # let's write hanoi!
-def hanoi(n, origin, to):
+def hanoi(n, src, dst):
     if n == 0:
         return
-    other = 3 - origin - to
-    hanoi(n-1, origin, other)
-    print("{} -> {}".format(origin, to))
-    hanoi(n-1, other, to)
+    other = 3 - src - dst
+    hanoi(n-1, src, other)
+    print("{} -> {}".format(src, dst))
+    hanoi(n-1, other, dst)
