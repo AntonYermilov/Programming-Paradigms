@@ -42,7 +42,7 @@ def fun_with_tuples():
     a, b, c = [1, 2, 3]
     print("\tList \"unpacking\": ", a, b, c)
     # a, b = [1,2,3] -- Error
-    *a, c = 1,2,3,4,5 # also works
+    a, *b, c = 1,2,3,4,5 # also works
     _, b, _ = 1, 2, 'lol'
 
 

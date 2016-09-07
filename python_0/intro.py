@@ -101,9 +101,11 @@ len(xs) # длина списка
 # Сортировка
 # xs.sort() # изменяет xs
 # xs.sort(reverse=True) # в обратном порядке
-# def second(pair):
-#     return pair[1]
-# [("hello", 2), ("world", 1)].sort(key=second) # по 2-му элементу пары
+def second(pair):
+    return pair[1]
+a = [("hello", 2), ("world", 1)]
+a.sort(key=second) # по 2-му элементу пары
+a.sort(key=lambda x: x[1]) # то же через лямбду
 # sorted(xs) ## новый список
 # dir([]) - получить все методы (функции) над списками
 
