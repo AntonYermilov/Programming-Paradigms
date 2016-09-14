@@ -202,6 +202,9 @@ print(capitals['Zimbabwe'])
 
 # let's write hanoi!
 def hanoi(n, src, dst):
+    """
+    hanoi prints steps to build a hanoi tower
+    """
     if n == 0:
         return
     other = 3 - src - dst
