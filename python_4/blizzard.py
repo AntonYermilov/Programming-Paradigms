@@ -5,12 +5,10 @@ class Character:
 
     def __init__(self, favouriteWeapon):
         self.__fv = favouriteWeapon
+        self.age = 0
 
     def favouriteWeapon(self):
         return self.__fv
-
-    def accept(self, visitor):
-        visitor.visit(self)
 
 
 class Elf(Character):
@@ -18,17 +16,26 @@ class Elf(Character):
     def __init__(self):
         super().__init__("bow")
 
+    def accept(self, visitor):
+        visitor.visitElf(self)
+
 
 class Orc(Character):
 
     def __init__(self):
         super().__init__("axe")
 
+    def accept(self, visitor):
+        visitor.visitOrc(self)
+
 
 class Human(Character):
 
     def __init__(self):
         super().__init__("sword")
+
+    def accept(self, visitor):
+        visitor.visitHuman(self)
 
 
 class Lord(Character):
@@ -40,19 +47,22 @@ class Lord(Character):
     def vassals(self):
         return self.__vassals
 
+    def accept(self, visitor):
+        visitor.visitLord(self)
 
 # Want to add message, but can't touch classes
 
-class CharacterVisitor:
 
-    def visit(self, char):
-        name = char.__class__.__name__
-        try:
-            fn = getattr(self, 'visit' + name)
-        except AttributeError:
-            print("Method for {} not found!".format(name))
-            raise NotImplementedError
-        return fn(char)
+class CharacterVisitor:
+    pass
+    # def visit(self, char):
+    #     name = char.__class__.__name__
+    #     try:
+    #         fn = getattr(self, 'visit' + name)
+    #     except AttributeError:
+    #         print("Method for {} not found!".format(name))
+    #         raise NotImplementedError
+    #     return fn(char)
 
 
 class MessagingVisitor(CharacterVisitor):
