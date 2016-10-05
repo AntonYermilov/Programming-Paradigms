@@ -56,6 +56,7 @@ class InOrder(AbstractTreeIterator):
 class LevelOrder(AbstractTreeIterator):
     ...
 
+
 def print_tree(iterator, msg=''):
     print(msg, end=' ')
     for i in iterator:
