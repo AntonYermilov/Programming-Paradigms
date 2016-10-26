@@ -89,12 +89,20 @@ lazyWow = print $ k 42 undefined
 
 -- 2a. Написать функцию, возвращающую количество цифр числа.
 --     Для целочисленного деления можете использовать функции div и mod.
-numberOfDigits :: Integer -> Int
-numberOfDigits = undefined
+toDigits :: Int -> [Int]
+-- toDigits = reverse . helper'
+--   where helper' 0 = [0]
+--         helper' a = helper (abs a)
+--         helper 0 = []
+--         helper a = (a `mod` 10) : helper (a `div` 10)
+toDigits = map digitToInt . show
+
+numberOfDigits :: Int -> Int
+numberOfDigits = length . toDigits
 
 -- 2b. Написать функцию, возвращающую сумму цифр числа.
-sumOfDigits :: Integer -> Integer
-sumOfDigits = undefined
+sumOfDigits :: Int -> Int
+sumOfDigits = sum . toDigits
 
 -- operator
 f --> a = f a
@@ -102,7 +110,11 @@ infixl 5 -->
 
 
 index :: Int -> [Int] -> Int
-index k l = undefined
+index k l = let
+  helper [] _ = -1
+  helper (x:xs) i | x == k = i
+                  | otherwise = helper xs (i + 1)
+  in helper l 0
 
 -- Determine if list l is a palindrome
 isPalindrome l = undefined
