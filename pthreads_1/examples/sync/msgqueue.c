@@ -25,8 +25,12 @@ void *consumer(void *data)
 	puts("start consume loop");
 	while (cont || queue_size(&queue->squeue.queue)) {
 		struct list_node *node;
-		if (cont)
-			wsqueue_wait(queue);
+
+    pthread_mutex_lock(&queue->squeue.mutex);
+    while (cont && !queue_size(&queue->squeue.queue))
+      pthread_cond_wait(&queue->cond, &queue->squeue.mutex);
+    pthread_mutex_unlock(&queue->squeue.mutex);
+
 		node = wsqueue_pop(queue);
 		if (node) {
 			struct payload *data = (struct payload *)node;
