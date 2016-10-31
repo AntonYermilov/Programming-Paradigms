@@ -26,10 +26,10 @@ void *consumer(void *data)
 	while (cont || queue_size(&queue->squeue.queue)) {
 		struct list_node *node;
 
-    pthread_mutex_lock(&queue->squeue.mutex);
-    while (cont && !queue_size(&queue->squeue.queue))
-      pthread_cond_wait(&queue->cond, &queue->squeue.mutex);
-    pthread_mutex_unlock(&queue->squeue.mutex);
+		pthread_mutex_lock(&queue->squeue.mutex);
+		while (cont && !queue_size(&queue->squeue.queue))
+			pthread_cond_wait(&queue->cond, &queue->squeue.mutex);
+		pthread_mutex_unlock(&queue->squeue.mutex);
 
 		node = wsqueue_pop(queue);
 		if (node) {
