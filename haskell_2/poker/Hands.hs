@@ -1,3 +1,4 @@
+{-# LANGUAGE TupleSections #-}
 module Hands where
 
 import           Data.Function
