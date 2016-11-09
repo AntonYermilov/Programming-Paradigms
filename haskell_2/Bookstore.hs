@@ -67,7 +67,7 @@ data Freshman = Freshman { myName :: String, myQuestion :: Question }
 data PhdStudent = PhdStudent { phdName :: String }
 
 instance Student Freshman where
-  question = myQuestion
+  question _ = "why haskell in production?"
   doHomework _ = Nothing
 
 instance Teacher PhdStudent where

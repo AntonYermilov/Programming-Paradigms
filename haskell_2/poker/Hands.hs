@@ -13,7 +13,10 @@ value h = maybe ifNotFlush ifFlush (maybeFlush h)
         ifNotFlush = maybe (checkGroups h) (Straight,) (maybeStraight h)
 
 maybeFlush :: [Card] -> Maybe [Card]
-maybeFlush cs = undefined
+maybeFlush cs = if length c >= 5 then Just (take 5 c) else Nothing
+  where a = sortBy (comparing suit) $ reverse $ sort cs
+        b = groupBy ((==) `on` suit) $ a
+        c = head $ reverse $ sortByLength b
 
 maybeStraight :: [Card] -> Maybe [Card]
 maybeStraight cs = if length cs'' >= 5 then Just (lastN 5 cs'') else maybeWheel cs'
