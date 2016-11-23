@@ -14,3 +14,6 @@ solution.py
 GTAGS
 GRTAGS
 GPATH
+
+# rust build folder
+target/
