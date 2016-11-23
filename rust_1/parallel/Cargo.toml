@@ -1,0 +1,8 @@
+[package]
+name = "parallel"
+version = "0.1.0"
+authors = ["Andronik Ordian <write@reusable.software>"]
+
+[dependencies]
+rayon = "0.5"
+rand = "0.3"
