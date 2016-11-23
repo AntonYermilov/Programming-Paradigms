@@ -18,6 +18,9 @@ http://img-9gag-fun.9cache.com/photo/arOVOPp_460sv.mp4
 * lifetimes
     * https://is.gd/2CToyD
 
+* task
+https://is.gd/ICMnPr
+
 resources:
 * rust
     * https://doc.rust-lang.org/stable/book/
