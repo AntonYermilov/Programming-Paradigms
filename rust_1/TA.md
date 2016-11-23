@@ -14,7 +14,7 @@ http://img-9gag-fun.9cache.com/photo/arOVOPp_460sv.mp4
     * https://is.gd/GyvxkG
     * https://is.gd/s0uaVc
 * traits
-    * https://is.gd/Q6UKu5
+    * https://is.gd/NzT55x
 * lifetimes
     * https://is.gd/2CToyD
 
