@@ -52,8 +52,8 @@ class BinaryOperation:
             "*":operator.mul,
             "/":operator.floordiv,
             "%":operator.mod,
-            "==":operator.is_,
-            "!=":operator.is_not,
+            "==":operator.eq,
+            "!=":operator.ne,
             "<":operator.lt,
             ">":operator.gt,
             "<=":operator.le,
@@ -115,7 +115,7 @@ class Conditional:
         self.if_false = if_false
 
     def evaluate(self, scope):
-        val = self.condition.evaluate(scope)
+        val = self.condition.evaluate(scope).value
         if val and self.if_true:
             body = self.if_true
         elif self.if_false:
@@ -144,7 +144,7 @@ class Read:
 
     def evaluate(self, scope):
         a = int(input())
-        scope[self.name] = a
+        scope[self.name] = Number(a)
         return Number(a)
 
 
@@ -165,6 +165,7 @@ def test():
     assert BinaryOperation(Number(5), "&&", Number(0)).evaluate(scope).value == 0
     assert BinaryOperation(Number(5), "&&", Number(-2)).evaluate(scope).value == 1
     assert UnaryOperation("!", Number(5)).evaluate(scope).value == 0
+
 
 
 if __name__ == '__main__':
