@@ -174,5 +174,5 @@ def test_scope():
 
 
 if __name__ == '__main__':
-    pass
-    # test()
+    test()
+    test_scope()
