@@ -38,3 +38,4 @@ xdg-open coverage_html/index.html
 * https://github.com/integrations
 * https://shields.io/ fancy badges
 * travis, appveyor
+* example https://github.com/ordian/pydirectio
