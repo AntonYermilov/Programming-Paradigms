@@ -1,4 +1,5 @@
 import operator
+import pytest
 
 class Scope(object):
     def __init__(self, parent=None):
@@ -166,7 +167,12 @@ def test():
     assert BinaryOperation(Number(5), "&&", Number(-2)).evaluate(scope).value == 1
     assert UnaryOperation("!", Number(5)).evaluate(scope).value == 0
 
+def test_scope():
+    with pytest.raises(Exception):
+        sc = Scope()
+        sc['missing']
 
 
 if __name__ == '__main__':
-    test()
+    pass
+    # test()
