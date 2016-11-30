@@ -115,7 +115,7 @@ class Conditional:
         self.if_false = if_false
 
     def evaluate(self, scope):
-        val = self.expr.evaluate(scope)
+        val = self.condition.evaluate(scope)
         if val and self.if_true:
             body = self.if_true
         elif self.if_false:
