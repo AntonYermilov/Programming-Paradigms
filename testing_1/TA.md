@@ -39,3 +39,4 @@ xdg-open coverage_html/index.html
 * https://shields.io/ fancy badges
 * travis, appveyor
 * example https://github.com/ordian/pydirectio
+* coverage example https://coveralls.io
