@@ -11,6 +11,10 @@
 ## Code metrics
 
 ### Code coverage
+sudo pip install coverage
+coverage run file.py
+coverage html -d coverage_html
+xdg-open coverage_html/index.html
 * exceptions
 * corner cases
 
