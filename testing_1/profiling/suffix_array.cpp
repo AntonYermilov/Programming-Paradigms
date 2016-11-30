@@ -45,9 +45,9 @@ int main() {
     string text;
     cin >> text;
     auto sa = buildSuffixArray(text);
-    for (int i: sa) {
-        cout << i << " ";
-    }
-    cout << endl;
+    // for (int i: sa) {
+    //     cout << i << " ";
+    // }
+    cout << sa.size() << endl;
     return 0;
 }
