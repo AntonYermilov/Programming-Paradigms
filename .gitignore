@@ -17,3 +17,6 @@ GPATH
 
 # rust build folder
 target/
+
+# nasm examples
+*.exe
