@@ -1,6 +1,8 @@
 Programming-Paradigms
 =====================
 
+[![Join the chat at https://gitter.im/Programming-Paradigms-2017/Lobby](https://badges.gitter.im/Programming-Paradigms-2017/Lobby.svg)](https://gitter.im/Programming-Paradigms-2017/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Examples.
 
 ## What if I spot an error?
